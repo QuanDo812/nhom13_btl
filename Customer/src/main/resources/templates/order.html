@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+
+<!-- Mirrored from portotheme.com/html/molla/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 02:58:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head th:replace="fragments::head"></head>
+
+<body>
+<div class="page-wrapper">
+  <header th:replace="fragments::header"></header> <!-- End .header -->
+
+  <main class="main">
+    <div class="page-header text-center" style="background-image: url('images/page-header-bg.jpg')">
+      <div class="container">
+        <h1 class="page-title">Checkout<span>Shop</span></h1>
+      </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a th:href="@{/index}">Home</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/shop}">Shop</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Order</li>
+        </ol>
+      </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+      <div class="checkout">
+        <div class="container">
+          <p class="alert alert-primary">You have placed your order successfully</p>
+        </div><!-- End .container -->
+      </div><!-- End .checkout -->
+    </div><!-- End .page-content -->
+  </main><!-- End .main -->
+
+  <footer th:replace="fragments::footer"></footer>
+</div><!-- End .page-wrapper -->
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+<!-- Mobile Menu -->
+
+
+<!-- Sign in / Register Modal -->
+
+<!-- Plugins JS File -->
+<div th:replace="fragments::script"></div>
+</body>
+
+
+<!-- Mirrored from portotheme.com/html/molla/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 02:58:25 GMT -->
+</html>

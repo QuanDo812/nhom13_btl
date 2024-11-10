@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+
+<!-- Mirrored from portotheme.com/html/molla/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 02:58:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head th:replace="fragments::head"></head>
+
+<body>
+    <div class="page-wrapper">
+        <header th:replace="fragments::header"></header> <!-- End .header -->
+
+        <main class="main">
+        	<div class="page-header text-center" style="background-image: url('images/page-header-bg.jpg')">
+        		<div class="container">
+        			<h1 class="page-title">Checkout<span>Shop</span></h1>
+        		</div><!-- End .container -->
+        	</div><!-- End .page-header -->
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a th:href="@{/index}">Home</a></li>
+                        <li class="breadcrumb-item"><a th:href="@{/shop}">Shop</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                    </ol>
+                </div><!-- End .container -->
+            </nav><!-- End .breadcrumb-nav -->
+
+            <div class="page-content">
+            	<div class="checkout">
+	                <div class="container">
+            			<form action="#">
+		                	<div class="row">
+		                		<div class="col-lg-9">
+		                			<h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
+		                				<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>First Name *</label>
+                                                <p type="text" class="form-control" th:text="${customer.firstName}" readonly></p>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>Last Name *</label>
+                                                <p type="text" class="form-control" th:text="${customer.lastName}" readonly></p>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+	            						<label>Company Name (Optional)</label>
+                                        <p type="text" class="form-control"></p>
+
+	            						<label>Country *</label>
+                                        <p type="text" class="form-control" th:text="*{customer.country}" readonly></p>
+
+	            						<label>Address *</label>
+                                    <p type="text" class="form-control" th:text="${customer.address + ', ' + customer.city}" readonly></p>
+
+
+
+	            						<div class="row">
+		                					<div class="col-sm-6">
+		                						<label>Email *</label>
+                                                <p type="text" class="form-control" th:text="${customer.username}" readonly></p>
+		                					</div><!-- End .col-sm-6 -->
+
+		                					<div class="col-sm-6">
+		                						<label>Phone Number *</label>
+                                                <p type="number" class="form-control" th:text="${customer.phoneNumber}" readonly></p>
+		                					</div><!-- End .col-sm-6 -->
+		                				</div><!-- End .row -->
+
+
+	                					<label>Order notes (optional)</label>
+	        							<textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+		                		</div><!-- End .col-lg-9 -->
+		                		<aside class="col-lg-3">
+		                			<div class="summary">
+		                				<h3 class="summary-title">Your Order</h3><!-- End .summary-title -->
+
+		                				<table class="table table-summary">
+		                					<thead>
+		                						<tr>
+		                							<th>Product</th>
+		                							<th>Total</th>
+		                						</tr>
+		                					</thead>
+
+		                					<tbody>
+		                						<tr th:each="item : ${cart.cartItem}">
+		                							<td><a href="#" th:text="${item.product.name}"></a></td>
+		                							<td th:text="'$' + ${item.product.costPrice} + ' x ' + ${item.quantity}">$84.00x2</td>
+		                						</tr>
+
+		                						<tr class="summary-subtotal">
+		                							<td>Subtotal:</td>
+		                							<td th:text="'$' + ${cart.totalPrices}">$160.00</td>
+		                						</tr><!-- End .summary-subtotal -->
+		                						<tr>
+		                							<td>Shipping:</td>
+		                							<td>Free shipping</td>
+		                						</tr>
+		                						<tr class="summary-total">
+		                							<td>Total:</td>
+		                							<td th:text="'$' + ${cart.totalPrices}">$160.00</td>
+		                						</tr><!-- End .summary-total -->
+		                					</tbody>
+		                				</table><!-- End .table table-summary -->
+
+		                				<a th:href="@{/order}" class="btn btn-outline-primary-2 btn-order btn-block">
+		                					<span class="btn-text">Place Order</span>
+		                					<span class="btn-hover-text">Proceed to Checkout</span>
+                                        </a>
+		                			</div><!-- End .summary -->
+		                		</aside><!-- End .col-lg-3 -->
+		                	</div><!-- End .row -->
+            			</form>
+	                </div><!-- End .container -->
+                </div><!-- End .checkout -->
+            </div><!-- End .page-content -->
+        </main><!-- End .main -->
+
+    <footer th:replace="fragments::footer"></footer>
+    </div><!-- End .page-wrapper -->
+    <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+    <!-- Mobile Menu -->
+
+
+    <!-- Sign in / Register Modal -->
+
+    <!-- Plugins JS File -->
+    <div th:replace="fragments::script"></div>
+</body>
+
+
+<!-- Mirrored from portotheme.com/html/molla/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 02:58:25 GMT -->
+</html>

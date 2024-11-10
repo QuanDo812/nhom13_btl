@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+
+<!-- Mirrored from portotheme.com/html/molla/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 03:17:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head th:replace="fragments::head"></head>
+
+<body>
+<div class="page-wrapper">
+  <header th:replace="fragments::header"></header><!-- End .header -->
+
+  <main class="main">
+
+
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('images/backgrounds/img.png')">
+      <div class="container">
+        <div class="form-box">
+          <div class="form-tab">
+            <ul class="nav nav-pills nav-fill" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab" aria-controls="signin-2" aria-selected="false">Register</a>
+              </li>
+            </ul>
+            <div th:if = "${error}" class="text-center alert alert-danger">
+              <p th:text="${error}"></p>
+            </div>
+            <div th:if = "${username}" class="text-center alert-warning">
+              <p th:text="${username}"></p>
+            </div>
+            <div th:if = "${password}" class="text-center alert-warning">
+              <p th:text="${password}"></p>
+            </div>
+            <div th:if = "${success}" class="text-center alert-success">
+              <p th:text="${success}"></p>
+            </div>
+            <form th:action="@{/do-register}" method="post" th:object="${customerDto}">
+
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" th:field = "*{firstName}" class="form-control">
+              </div><!-- End .form-group -->
+              <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
+                   th:errors = "*{firstName}"
+              ></div>
+
+              <div class="form-group">
+                <label >Last Name</label>
+                <input type="text" th:field = "*{lastName}" class="form-control">
+              </div><!-- End .form-group -->
+              <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}"
+                   th:errors = "*{lastName}"
+              ></div>
+
+              <div class="form-group">
+                <label >Username</label>
+                <input type="email" th:field = "*{username}" class="form-control">
+              </div><!-- End .form-group -->
+
+              <div class="form-group">
+                <label >Password</label>
+                <input type="password" th:field = "*{password}" class="form-control">
+              </div><!-- End .form-group -->
+              <div class="alert alert-danger" th:if="${#fields.hasErrors('password')}"
+                   th:errors = "*{password}"
+              ></div>
+
+              <div class="form-group">
+                <label >Verify Password</label>
+                <input type="password" th:field = "*{repeatPassword}" class="form-control">
+              </div><!-- End .form-group -->
+
+              <div class="form-footer">
+                <button type="submit" class="btn btn-outline-primary-2">
+                  <span>REGISTER</span>
+                  <i class="icon-long-arrow-right"></i>
+                </button>
+                <a th:href="@{/login}"><span>LOGIN</span></a>
+              </div><!-- End .form-footer -->
+            </form>
+          </div><!-- End .form-tab -->
+        </div><!-- End .form-box -->
+      </div><!-- End .container -->
+    </div><!-- End .login-page section-bg -->
+  </main><!-- End .main -->
+
+  <footer th:replace="fragments::footer"></footer>
+</div><!-- End .page-wrapper -->
+
+
+<!-- Plugins JS File -->
+<script th:replace="fragments::script"></script>
+</body>
+
+
+<!-- Mirrored from portotheme.com/html/molla/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 03:17:14 GMT -->
+</html>

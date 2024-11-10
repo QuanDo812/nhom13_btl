@@ -1,0 +1,19 @@
+package com.film.library.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Data @NoArgsConstructor @AllArgsConstructor
+@Table(name="roles")
+public class Role {
+    @Id
+    @GeneratedValue(strategy  = GenerationType.IDENTITY)
+    @Column(name = "role_id")
+    private Long id;
+
+    private String name;
+}

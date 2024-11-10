@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+
+<!-- Mirrored from portotheme.com/html/molla/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 03:15:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head th:replace="fragments::head"></head>
+<body>
+<div class="page-wrapper">
+    <header th:replace="fragments::header"></header> <!-- End .header -->
+
+    <main class="main">
+        <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+            <div class="container">
+                <h1 class="page-title">My Account<span>Shop</span></h1>
+            </div><!-- End .container -->
+        </div><!-- End .page-header -->
+        <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a th:href="@{/index}">Home</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/shop}">Shop</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">My Account</li>
+                </ol>
+            </div><!-- End .container -->
+        </nav><!-- End .breadcrumb-nav -->
+
+        <div class="page-content">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card p-4 shadow">
+
+                        <form th:action="@{/update-infor}" method="put" th:object="${customer}">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <label>First Name *</label>
+                                                <input type="text" class="form-control" th:field="*{firstName}" name="firstname" readonly>
+                                            </div><!-- End .col-sm-6 -->
+
+                                            <div class="col-sm-6">
+                                                <label>Last Name *</label>
+                                                <input type="text" class="form-control" th:field="*{lastName}" name="lastname" readonly>
+                                            </div><!-- End .col-sm-6 -->
+                                        </div><!-- End .row -->
+
+                                        <label>Username *</label>
+                                        <input type="text" class="form-control" th:field="*{username}" name="username" readonly>
+
+                                        <label>Phone Number *</label>
+                                        <input type="number" class="form-control" th:field="*{phoneNumber}" name="phoneNumber">
+
+
+
+                                        <label>Address *</label>
+                                        <input type="text" class="form-control" th:field="*{address}" name="address">
+
+                                        <label>City *</label>
+                                        <input type="text" class="form-control" th:field="*{city}" name="city">
+
+                                        <label>Country *</label>
+                                        <input type="text" class="form-control" th:field="*{country}" name="country">
+
+                                        <button type="submit" class="btn btn-outline-primary-2">
+                                            <span>SAVE CHANGES</span>
+                                            <i class="icon-long-arrow-right"></i>
+                                        </button>
+                                    </form>
+                        </div>
+                    </div><!-- .End .tab-pane -->
+                </div>
+            </div>
+        </div><!-- End .page-content -->
+    </main><!-- End .main -->
+
+<footer th:replace="fragments::footer"></footer>
+</div><!-- End .page-wrapper -->
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+<!-- Mobile Menu -->
+
+
+<!-- Sign in / Register Modal -->
+
+<!-- Plugins JS File -->
+<div th:replace="fragments::script"></div>
+</body>
+
+
+<!-- Mirrored from portotheme.com/html/molla/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jan 2024 03:15:52 GMT -->
+</html>
